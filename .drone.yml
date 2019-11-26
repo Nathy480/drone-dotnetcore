@@ -4,5 +4,5 @@ pipeline:
         commands:
             - sh build.sh
     build-image:
-        command:
+        command: 
             - docker build -t tata480/dotnetcore-container ./Web
