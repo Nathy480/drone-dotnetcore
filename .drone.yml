@@ -1,8 +1,12 @@
-pipeline:
-    compile:
-    image: microsoft/aspnetcore-build
-    commands:
-    - sh build.sh
-    build-image:
-    command: 
-    - docker build -t tata480/dotnetcore-container ./Web
+kind: pipeline
+name: Pipeline
+
+steps:
+- name: compile
+image: microsoft/aspnetcore-build
+commands:
+- sh build.sh
+
+build-image:
+commands: 
+- docker build -t tata480/dotnetcore-container ./Web
