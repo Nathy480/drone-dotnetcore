@@ -1,8 +1,8 @@
 pipeline:
     compile:
-        image: microsoft/aspnetcore-build
-        commands:
-            - sh build.sh
+    image: microsoft/aspnetcore-build
+    commands:
+        - sh build.sh
     build-image:
-        command: 
-            - docker build -t tata480/dotnetcore-container ./Web
+    command: 
+        - docker build -t tata480/dotnetcore-container ./Web
