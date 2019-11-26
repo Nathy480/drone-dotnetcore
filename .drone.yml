@@ -1,12 +1,14 @@
 kind: pipeline
-name: Pipeline
 
 steps:
 - name: compile
-image: microsoft/aspnetcore-build
-commands:
-- sh build.sh
-
-build-image:
-commands: 
-- docker build -t tata480/dotnetcore-container ./Web
+  image: microsoft/dotnet:sdk
+  commands:
+    - sh build.sh
+- name: build-image
+  image: plugins/docker
+  settings:
+    username: tata480
+    password: 392adb85-7fde-4bf4-9304-ad6d40b4b9cb
+    repo: tata480/dotnetcore-container
+    dockerfile: Web/Dockerfile
